@@ -21,6 +21,8 @@ class Metadatum(models.Model):
     This is achieved by using the generic foreign key from the
     ``django.contrib.contenttypes`` module.
     """
+    id = models.AutoField(primary_key=True)
+
     class Meta:
         verbose_name_plural = 'metadata'
         unique_together = ('content_type', 'object_id', 'key')
