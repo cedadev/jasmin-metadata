@@ -26,6 +26,8 @@ class Form(models.Model):
     """
     Model representing a form.
     """
+    id = models.AutoField(primary_key=True)
+
     #: The name of the form
     name = models.CharField(max_length = 200,
                             help_text = 'A name for the form, to identify '
@@ -50,6 +52,8 @@ class Field(PolymorphicModel):
     """
     Model representing a form field.
     """
+    id = models.AutoField(primary_key=True)
+
     class Meta:
         unique_together = ('form', 'name')
         ordering = ('position', 'name')
@@ -135,6 +139,8 @@ class UserChoice(models.Model):
     """
     Model for a choice for :py:class:`ChoiceField`.
     """
+    id = models.AutoField(primary_key=True)
+
     value = models.CharField(
         unique = True,
         max_length = 250,
