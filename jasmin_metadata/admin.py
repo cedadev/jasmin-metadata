@@ -9,7 +9,7 @@ from django.contrib import admin
 from django.contrib.contenttypes.models import ContentType
 from django import forms
 from django.contrib.admin import helpers
-from django.utils.encoding import force_text
+import django.utils.encoding
 
 from polymorphic.admin import PolymorphicInlineSupportMixin, StackedPolymorphicInline
 
@@ -209,7 +209,7 @@ class HasMetadataModelAdmin(admin.ModelAdmin):
         if metadata_form.errors:
             errors.extend(metadata_form.errors.values())
         context = dict(self.admin_site.each_context(request),
-            title = 'Set metadata for {}'.format(force_text(self.model._meta.verbose_name)),
+            title = 'Set metadata for {}'.format(django.utils.encoding.force_str(self.model._meta.verbose_name)),
             adminform = admin_form,
             metadata_form = metadata_admin_form,
             object_id = obj.pk,
@@ -254,7 +254,7 @@ class HasMetadataModelAdmin(admin.ModelAdmin):
         )
         media = self.media + admin_form.media
         context = dict(self.admin_site.each_context(request),
-            title = 'Change {}'.format(force_text(self.model._meta.verbose_name)),
+            title = 'Change {}'.format(django.utils.encoding.force_str(self.model._meta.verbose_name)),
             adminform = admin_form,
             object_id = obj.pk,
             original = obj,
