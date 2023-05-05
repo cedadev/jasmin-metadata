@@ -4,38 +4,37 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('jasmin_metadata', '0002_auto_20170125_1755'),
+        ("jasmin_metadata", "0002_auto_20170125_1755"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='choicefieldbase',
-            options={'base_manager_name': 'objects'},
+            name="choicefieldbase",
+            options={"base_manager_name": "objects"},
         ),
         migrations.AlterModelOptions(
-            name='textfieldbase',
-            options={'base_manager_name': 'objects'},
+            name="textfieldbase",
+            options={"base_manager_name": "objects"},
         ),
         migrations.AlterField(
-            model_name='field',
-            name='id',
+            model_name="field",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='form',
-            name='id',
+            model_name="form",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='metadatum',
-            name='id',
+            model_name="metadatum",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='userchoice',
-            name='id',
+            model_name="userchoice",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]

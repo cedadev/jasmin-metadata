@@ -12,5 +12,6 @@ class AppConfig(BaseAppConfig):
     """
     Application configuration object for the JASMIN metadata app.
     """
-    name = '.'.join(__name__.split('.')[:-1])
-    verbose_name = 'JASMIN Metadata'
+
+    name = ".".join(__name__.split(".")[:-1])
+    verbose_name = "JASMIN Metadata"

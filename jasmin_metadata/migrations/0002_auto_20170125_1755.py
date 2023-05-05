@@ -6,20 +6,22 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('jasmin_metadata', '0001_initial'),
+        ("jasmin_metadata", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ipv4field',
-            name='require_reverse_dns_lookup',
+            model_name="ipv4field",
+            name="require_reverse_dns_lookup",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='field',
-            name='help_text',
-            field=models.TextField(blank=True, help_text='Help text for the field. Markdown syntax is permitted.'),
+            model_name="field",
+            name="help_text",
+            field=models.TextField(
+                blank=True,
+                help_text="Help text for the field. Markdown syntax is permitted.",
+            ),
         ),
     ]
