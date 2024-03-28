@@ -1,3 +1,5 @@
+This django application is now part of [jasmin-services](https://github.com/cedadev/jasmin-services) .
+
 # jasmin-metadata
 
 Django app providing the ability to attach arbitrary metadata to objects. It also
